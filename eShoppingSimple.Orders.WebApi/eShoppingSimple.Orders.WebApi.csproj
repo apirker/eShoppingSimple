@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\eShoppingSimple.Orders.Domain\eShoppingSimple.Orders.Domain.csproj" />
     <ProjectReference Include="..\eShoppingSimple.Orders.ServiceAccess\eShoppingSimple.Orders.ServiceAccess.csproj" />
   </ItemGroup>
 
