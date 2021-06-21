@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.Orders.WebApi", "eShoppingSimple.Orders.WebApi\eShoppingSimple.Orders.WebApi.csproj", "{2F239AE6-0C42-4C74-9E38-D1AEB6F560FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.Shippings.WebApi", "eShoppingSimple.Shippings.WebApi\eShoppingSimple.Shippings.WebApi.csproj", "{FC34BD69-3AAA-4A96-BC05-B319EB142D89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F239AE6-0C42-4C74-9E38-D1AEB6F560FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F239AE6-0C42-4C74-9E38-D1AEB6F560FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F239AE6-0C42-4C74-9E38-D1AEB6F560FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F239AE6-0C42-4C74-9E38-D1AEB6F560FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC34BD69-3AAA-4A96-BC05-B319EB142D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC34BD69-3AAA-4A96-BC05-B319EB142D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC34BD69-3AAA-4A96-BC05-B319EB142D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC34BD69-3AAA-4A96-BC05-B319EB142D89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06971997-F5B4-4082-A6ED-BC6A63033732}
+	EndGlobalSection
+EndGlobal
