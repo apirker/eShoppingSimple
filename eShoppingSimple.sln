@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.Orders.WebA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.Shippings.WebApi", "eShoppingSimple.Shippings.WebApi\eShoppingSimple.Shippings.WebApi.csproj", "{FC34BD69-3AAA-4A96-BC05-B319EB142D89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.Orders.ServiceAccess", "eShoppingSimple.Orders.ServiceAccess\eShoppingSimple.Orders.ServiceAccess.csproj", "{1A7CD86C-CBD7-4072-8CF0-66EB615C4CC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.Shippings.ServiceAccess", "eShoppingSimple.Shippings.ServiceAccess\eShoppingSimple.Shippings.ServiceAccess.csproj", "{1DEB7245-38FE-445D-ACA1-E3704AC7847D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{FC34BD69-3AAA-4A96-BC05-B319EB142D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC34BD69-3AAA-4A96-BC05-B319EB142D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC34BD69-3AAA-4A96-BC05-B319EB142D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7CD86C-CBD7-4072-8CF0-66EB615C4CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7CD86C-CBD7-4072-8CF0-66EB615C4CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7CD86C-CBD7-4072-8CF0-66EB615C4CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7CD86C-CBD7-4072-8CF0-66EB615C4CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DEB7245-38FE-445D-ACA1-E3704AC7847D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DEB7245-38FE-445D-ACA1-E3704AC7847D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DEB7245-38FE-445D-ACA1-E3704AC7847D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DEB7245-38FE-445D-ACA1-E3704AC7847D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
