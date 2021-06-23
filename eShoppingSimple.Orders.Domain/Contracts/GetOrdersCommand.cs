@@ -1,12 +1,19 @@
-﻿using System;
+﻿using eShoppingSimple.ServiceChassis.Domain;
+using eShoppingSimple.ServiceChassis.Storage.Abstractions;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
-    class GetOrdersCommand
+    class GetOrdersCommand : BaseQuery<IOrder>
     {
+        public GetOrdersCommand(IServiceProvider serviceProvider) : base(serviceProvider)
+        {
+        }
+
+        protected override IEnumerable<IOrder> QueryInternal(IUnitOfWork unitOfWork)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
