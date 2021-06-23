@@ -2,14 +2,14 @@
 
 namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TDomain> where TDomain : class, IHasId
     {
-        void Add(T item);
+        void Add(TDomain item);
 
-        void Delete(T item);
+        void Delete(TDomain item);
 
-        void Update(T item);
+        void Update(TDomain item);
 
-        IEnumerable<T> GetAll();
+        IEnumerable<TDomain> GetAll();
     }
 }

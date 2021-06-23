@@ -9,4 +9,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\eShoppingSimple.ServiceChassis.Storage.Abstractions\eShoppingSimple.ServiceChassis.Storage.Abstractions.csproj" />
+    <ProjectReference Include="..\eShoppingSimple.ServiceChassis.Storage.EfCore\eShoppingSimple.ServiceChassis.Storage.EfCore.csproj" />
+  </ItemGroup>
+
 </Project>

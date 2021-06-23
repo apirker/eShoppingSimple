@@ -24,7 +24,7 @@ namespace eShoppingSimple.ServiceChassis.Domain
                 var eventBus = serviceProvider.GetService<IEventBus>();
 
                 eventBundle.Publish(eventBus);
-                unitOfWork.SaveChanges();
+                unitOfWork.Commit();
             }
         }
     }

@@ -21,7 +21,7 @@ namespace eShoppingSimple.ServiceChassis.Domain
             using (var unitOfWork = serviceProvider.GetService<IUnitOfWork>())
             {
                 var results = QueryInternal(unitOfWork);
-                unitOfWork.SaveChanges();
+                unitOfWork.Commit();
 
                 return results;
             }

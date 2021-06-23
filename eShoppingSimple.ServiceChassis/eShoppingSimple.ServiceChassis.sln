@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Storage.Abstractions", "eShoppingSimple.ServiceChassis.Storage.Abstractions\eShoppingSimple.ServiceChassis.Storage.Abstractions.csproj", "{089E8120-7D15-4712-BCD2-06B268B9BA53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Events.Abstractions", "eShoppingSimple.ServiceChassis.Events.Abstractions\eShoppingSimple.ServiceChassis.Events.Abstractions.csproj", "{8958FF7E-D930-4385-9FDF-689C7616BA05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Events.Abstractions", "eShoppingSimple.ServiceChassis.Events.Abstractions\eShoppingSimple.ServiceChassis.Events.Abstractions.csproj", "{8958FF7E-D930-4385-9FDF-689C7616BA05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Domain", "eShoppingSimple.ServiceChassis.Domain\eShoppingSimple.ServiceChassis.Domain.csproj", "{409678A8-1941-48A4-A092-8F820DEEF403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Domain", "eShoppingSimple.ServiceChassis.Domain\eShoppingSimple.ServiceChassis.Domain.csproj", "{409678A8-1941-48A4-A092-8F820DEEF403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Storage", "eShoppingSimple.ServiceChassis.Storage\eShoppingSimple.ServiceChassis.Storage.csproj", "{6ECBB0F1-4FCB-454A-BADA-08A49B0A46F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Storage", "eShoppingSimple.ServiceChassis.Storage\eShoppingSimple.ServiceChassis.Storage.csproj", "{6ECBB0F1-4FCB-454A-BADA-08A49B0A46F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.WebApi", "eShoppingSimple.ServiceChassis.WebApi\eShoppingSimple.ServiceChassis.WebApi.csproj", "{9302ABE8-A102-4830-932F-8C5524676B4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.WebApi", "eShoppingSimple.ServiceChassis.WebApi\eShoppingSimple.ServiceChassis.WebApi.csproj", "{9302ABE8-A102-4830-932F-8C5524676B4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Storage.EfCore", "eShoppingSimple.ServiceChassis.Storage.EfCore\eShoppingSimple.ServiceChassis.Storage.EfCore.csproj", "{B2331C4D-2E7B-4459-B226-BB2C23477486}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9302ABE8-A102-4830-932F-8C5524676B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9302ABE8-A102-4830-932F-8C5524676B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9302ABE8-A102-4830-932F-8C5524676B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2331C4D-2E7B-4459-B226-BB2C23477486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2331C4D-2E7B-4459-B226-BB2C23477486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2331C4D-2E7B-4459-B226-BB2C23477486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2331C4D-2E7B-4459-B226-BB2C23477486}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
