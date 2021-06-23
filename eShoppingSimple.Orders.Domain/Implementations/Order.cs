@@ -9,26 +9,26 @@ namespace eShoppingSimple.Orders.Domain.Implementations
     {
         private IList<Item> items = new List<Item>();
 
-        public Order(Guid orderId, Guid customerId, IEnumerable<(Guid itemId, string name, float price)> items)
+        public Order(Guid orderId, Guid customerId, IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items)
         {
-            OrderId = orderId;
+            Id = orderId;
             CustomerId = customerId;
 
-            this.items = items.Select(i => new Item(i.itemId, i.name, i.price)).ToList();
+            this.items = items.Select(i => new Item(i.itemId, i.name, i.price, i.pictures)).ToList();
         }
 
-        public Guid OrderId { get; }
+        public Guid Id { get; set; }
 
         public Guid CustomerId { get; }
 
         public IEnumerable<IItem> Items => items.Select(i => i as IItem);
 
-        internal void AddItem(Guid itemId, string name, float price)
+        internal void AddItem(Guid itemId, string name, float price, IList<byte[]> pictures)
         {
             if (items.Any(i => i.Id == itemId))
                 throw new InvalidOperationException();
 
-            items.Add(new Item(itemId, name, price));
+            items.Add(new Item(itemId, name, price, pictures));
         } 
 
         internal void RemoveItem(Guid itemId)
@@ -40,9 +40,9 @@ namespace eShoppingSimple.Orders.Domain.Implementations
             items.Remove(item);
         }
 
-        internal void ChangeItems(IEnumerable<(Guid itemId, string name, float price)> items)
+        internal void ChangeItems(IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items)
         {
-            this.items = items.Select(i => new Item(i.itemId, i.name, i.price)).ToList();
+            this.items = items.Select(i => new Item(i.itemId, i.name, i.price, i.pictures)).ToList();
         }
     }
 }

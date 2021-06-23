@@ -1,13 +1,12 @@
-﻿using System;
+﻿using eShoppingSimple.ServiceChassis.Storage.Abstractions;
+using System;
 using System.Collections.Generic;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
-    public interface IOrder
+    public interface IOrder : IHasId
     {
-        Guid OrderId { get; }
         Guid CustomerId { get; }
-
         IEnumerable<IItem> Items { get; }
     }
 }

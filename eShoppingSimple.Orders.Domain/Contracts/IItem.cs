@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
@@ -7,5 +8,6 @@ namespace eShoppingSimple.Orders.Domain.Contracts
         Guid Id { get; }
         string Name { get; }
         float Price { get; }
+        IEnumerable<IPicture> Pictures { get; }
     }
 }

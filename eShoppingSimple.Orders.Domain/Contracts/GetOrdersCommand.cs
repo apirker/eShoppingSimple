@@ -1,4 +1,5 @@
-﻿using eShoppingSimple.ServiceChassis.Domain;
+﻿using eShoppingSimple.Orders.Domain.Implementations;
+using eShoppingSimple.ServiceChassis.Domain;
 using eShoppingSimple.ServiceChassis.Storage.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace eShoppingSimple.Orders.Domain.Contracts
 
         protected override IEnumerable<IOrder> QueryInternal(IUnitOfWork unitOfWork)
         {
-            throw new NotImplementedException();
+            var orderRepository = unitOfWork.GetRepository<Order>();
+            return orderRepository.GetAll();
         }
     }
 }
