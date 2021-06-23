@@ -1,4 +1,5 @@
-﻿using eShoppingSimple.ServiceChassis.Storage;
+﻿using eShoppingSimple.ServiceChassis.Events.Init;
+using eShoppingSimple.ServiceChassis.Storage;
 using eShoppingSimple.ServiceChassis.Storage.EfCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -63,6 +64,11 @@ namespace eShoppingSimple.ServiceChassis.WebApi
             }
 
             var storageSettings = GetSorageSettings(services, configuration);
+            var eventSettings = GetEventSettings(services, configuration);
+
+            if (eventSettings != null)
+                services.AddEvents(eventSettings);
+
             if (storageStartup != null && storageSettings != null)
                 storageStartup.Configure(services, storageSettings);
         }
@@ -94,6 +100,21 @@ namespace eShoppingSimple.ServiceChassis.WebApi
 
                 var storageSettings = serviceCollection.BuildServiceProvider().GetService<IOptions<StorageSettings>>();
                 return storageSettings.Value;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private static EventSettings GetEventSettings(IServiceCollection serviceCollection, IConfiguration configuration)
+        {
+            try
+            {
+                serviceCollection.Configure<EventSettings>(configuration.GetSection("EventSettings"));
+
+                var eventSettings = serviceCollection.BuildServiceProvider().GetService<IOptions<EventSettings>>();
+                return eventSettings.Value;
             }
             catch
             {

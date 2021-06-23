@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\eShoppingSimple.ServiceChassis.Events.Init\eShoppingSimple.ServiceChassis.Events.Init.csproj" />
     <ProjectReference Include="..\eShoppingSimple.ServiceChassis.Storage\eShoppingSimple.ServiceChassis.Storage.csproj" />
   </ItemGroup>
 
