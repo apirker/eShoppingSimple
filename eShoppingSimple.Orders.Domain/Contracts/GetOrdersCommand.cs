@@ -14,7 +14,7 @@ namespace eShoppingSimple.Orders.Domain.Contracts
 
         protected override IEnumerable<IOrder> QueryInternal(IUnitOfWork unitOfWork)
         {
-            var orderRepository = unitOfWork.GetRepository<Order>();
+            var orderRepository = unitOfWork.GetRepository<IOrder>();
             return orderRepository.GetAll();
         }
     }

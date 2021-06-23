@@ -1,24 +1,20 @@
+using eShoppingSimple.Orders.Storage;
+using eShoppingSimple.ServiceChassis.WebApi;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace eShoppingSimple.Orders.WebApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly ServiceStartup serviceStartup;
+        public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
             Configuration = configuration;
+            serviceStartup = new ServiceStartup("OrderService", "1.0.0", true, OrderStorageInitializer.CreateStorageStartup(), configuration, webHostEnvironment);
         }
 
         public IConfiguration Configuration { get; }
@@ -26,34 +22,14 @@ namespace eShoppingSimple.Orders.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "eShoppingSimple.Orders.WebApi", Version = "v1" });
-            });
+            services.AddStorageMapper();
+            serviceStartup.ConfigureServiceCollection(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IServiceProvider serviceProvider)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "eShoppingSimple.Orders.WebApi v1"));
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            serviceStartup.ConfigureApplication(app, serviceProvider);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace eShoppingSimple.Orders.Domain.Contracts
         protected override EventBundle ExecuteInternal(IUnitOfWork unitOfWork)
         {
             var order = (Order) OrderFactory.Create(Guid.NewGuid(), customerId, items);
-            var orderRepository = unitOfWork.GetRepository<Order>();
+            var orderRepository = unitOfWork.GetRepository<IOrder>();
             orderRepository.Add(order);
 
             return new EventBundle();

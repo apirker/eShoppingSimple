@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace eShoppingSimple.ServiceChassis.WebApi
 {
-    class ServiceStartup
+    public class ServiceStartup
     {
         private readonly string serviceName;
         private readonly string serviceVersion;

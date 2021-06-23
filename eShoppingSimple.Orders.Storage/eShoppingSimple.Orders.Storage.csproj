@@ -10,8 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Mapper\" />
+    <ProjectReference Include="..\eShoppingSimple.Orders.Domain\eShoppingSimple.Orders.Domain.csproj" />
   </ItemGroup>
 
 </Project>

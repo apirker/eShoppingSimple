@@ -18,7 +18,7 @@ namespace eShoppingSimple.Orders.Domain.Contracts
 
         protected override EventBundle ExecuteInternal(IUnitOfWork unitOfWork)
         {
-            var orderRepository = unitOfWork.GetRepository<Order>();
+            var orderRepository = unitOfWork.GetRepository<IOrder>();
             var orders = orderRepository.GetAll();
             var order = orders.FirstOrDefault(o => o.Id == orderId);
 
