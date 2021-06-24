@@ -2,6 +2,6 @@
 {
     public interface IPicture
     {
-        byte[] Content { get; }
+        string Content { get; }
     }
 }

@@ -26,7 +26,7 @@ namespace eShoppingSimple.ServiceChassis.WebApi
         private readonly IStorageStartup storageStartup;
         private readonly IConfiguration configuration;
         private readonly IWebHostEnvironment webHostEnvironment;
-        private const string swaggerPrefix = "swagger";
+        private const string swaggerPrefix = "";
 
         public ServiceStartup(string serviceName, string serviceVersion, bool isDevelopment, 
             IStorageStartup storageStartup, IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
@@ -83,7 +83,7 @@ namespace eShoppingSimple.ServiceChassis.WebApi
                 {
                     c.SwaggerEndpoint(swaggerPrefix == string.Empty
                         ? "/swagger/v1/swagger.json"
-                        : $"/{swaggerPrefix}/swagger/v1/swagger.json", $"{serviceName} {serviceVersion }");
+                        : $"/{swaggerPrefix}/swagger/v1/swagger.json", $"{serviceName} {serviceVersion}");
                     c.DisplayRequestDuration();
                 });
             }

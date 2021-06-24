@@ -9,7 +9,7 @@ namespace eShoppingSimple.Orders.Domain.Implementations
     {
         private IList<Item> items = new List<Item>();
 
-        public Order(Guid orderId, Guid customerId, IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items)
+        public Order(Guid orderId, Guid customerId, IEnumerable<(Guid itemId, string name, float price, IList<string> pictures)> items)
         {
             Id = orderId;
             CustomerId = customerId;
@@ -23,7 +23,7 @@ namespace eShoppingSimple.Orders.Domain.Implementations
 
         public IEnumerable<IItem> Items => items.Select(i => i as IItem);
 
-        internal void AddItem(Guid itemId, string name, float price, IList<byte[]> pictures)
+        internal void AddItem(Guid itemId, string name, float price, IList<string> pictures)
         {
             if (items.Any(i => i.Id == itemId))
                 throw new InvalidOperationException();
@@ -40,7 +40,7 @@ namespace eShoppingSimple.Orders.Domain.Implementations
             items.Remove(item);
         }
 
-        internal void ChangeItems(IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items)
+        internal void ChangeItems(IEnumerable<(Guid itemId, string name, float price, IList<string> pictures)> items)
         {
             this.items = items.Select(i => new Item(i.itemId, i.name, i.price, i.pictures)).ToList();
         }

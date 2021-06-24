@@ -6,7 +6,7 @@ namespace eShoppingSimple.Orders.Domain.Contracts
 {
     public static class OrderFactory
     {
-        public static IOrder Create(Guid orderId, Guid customerId, IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items)
+        public static IOrder Create(Guid orderId, Guid customerId, IEnumerable<(Guid itemId, string name, float price, IList<string> pictures)> items)
         {
             return new Order(orderId, customerId, items);
         }

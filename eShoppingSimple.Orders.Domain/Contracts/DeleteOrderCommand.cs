@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
-    class DeleteOrderCommand : BaseCommand
+    public class DeleteOrderCommand : BaseCommand
     {
         private readonly Guid orderId;
 

@@ -9,7 +9,7 @@ namespace eShoppingSimple.Orders.Domain.Implementations
     {
         private readonly IList<Picture> pictures;
 
-        public Item(Guid id, string name, float price, IList<byte[]> pictures)
+        public Item(Guid id, string name, float price, IList<string> pictures)
         {
             Id = id;
             Name = name;

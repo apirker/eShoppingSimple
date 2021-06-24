@@ -7,12 +7,12 @@ using System.Collections.Generic;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
-    class AddOrderCommand : BaseCommand
+    public class AddOrderCommand : BaseCommand
     {
         private readonly Guid customerId;
-        private readonly IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items;
+        private readonly IEnumerable<(Guid itemId, string name, float price, IList<string> pictures)> items;
 
-        public AddOrderCommand(Guid customerId, IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items, IServiceProvider serviceProvider) : base(serviceProvider)
+        public AddOrderCommand(Guid customerId, IEnumerable<(Guid itemId, string name, float price, IList<string> pictures)> items, IServiceProvider serviceProvider) : base(serviceProvider)
         {
             this.customerId = customerId;
             this.items = items;

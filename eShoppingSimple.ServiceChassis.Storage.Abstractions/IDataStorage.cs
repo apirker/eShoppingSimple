@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
 {
@@ -11,5 +12,7 @@ namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
         void Delete(TStorage storageItem);
 
         IEnumerable<TStorage> GetAll();
+
+        TStorage GetOne(Guid id);
     }
 }

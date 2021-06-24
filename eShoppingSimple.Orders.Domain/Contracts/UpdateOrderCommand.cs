@@ -8,12 +8,12 @@ using System.Linq;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
-    class UpdateOrderCommand : BaseCommand
+    public class UpdateOrderCommand : BaseCommand
     {
         private readonly Guid orderId;
-        private readonly IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items;
+        private readonly IEnumerable<(Guid itemId, string name, float price, IList<string> pictures)> items;
 
-        public UpdateOrderCommand(Guid orderId, IEnumerable<(Guid itemId, string name, float price, IList<byte[]> pictures)> items, IServiceProvider serviceProvider) : base(serviceProvider)
+        public UpdateOrderCommand(Guid orderId, IEnumerable<(Guid itemId, string name, float price, IList<string> pictures)> items, IServiceProvider serviceProvider) : base(serviceProvider)
         {
             this.orderId = orderId;
             this.items = items;

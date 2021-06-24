@@ -4,11 +4,11 @@ namespace eShoppingSimple.Orders.Domain.Implementations
 {
     class Picture : IPicture
     {
-        public Picture(byte[] content)
+        public Picture(string content)
         {
             Content = content;
         }
 
-        public byte[] Content { get; }
+        public string Content { get; }
     }
 }

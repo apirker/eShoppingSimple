@@ -7,5 +7,7 @@
         TStorage Map(TDomain domain);
 
         TDomain Map(TStorage storage);
+
+        void Map(TDomain source, TStorage destination);
     }
 }

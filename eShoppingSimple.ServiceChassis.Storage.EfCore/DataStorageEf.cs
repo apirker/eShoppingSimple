@@ -1,5 +1,6 @@
 ﻿using eShoppingSimple.ServiceChassis.Storage.Abstractions;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,6 +28,11 @@ namespace eShoppingSimple.ServiceChassis.Storage.EfCore
         public IEnumerable<TStorage> GetAll()
         {
             return dbContext.Set<TStorage>().Where(t => true);
+        }
+
+        public TStorage GetOne(Guid id)
+        {
+            return dbContext.Set<TStorage>().FirstOrDefault(t => t.Id == id);
         }
 
         public void Update(TStorage storageItem)

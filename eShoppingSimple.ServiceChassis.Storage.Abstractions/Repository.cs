@@ -23,8 +23,8 @@ namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
 
         public void Delete(TDomain item)
         {
-            var data = mapper.Map(item);
-            dataStorage.Delete(data);
+            var existingEntity = dataStorage.GetOne(item.Id);
+            dataStorage.Delete(existingEntity);
         }
 
         public IEnumerable<TDomain> GetAll()
@@ -35,8 +35,10 @@ namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
 
         public void Update(TDomain item)
         {
-            var data = mapper.Map(item);
-            dataStorage.Update(data);
+            var existingEntity = dataStorage.GetOne(item.Id);
+            mapper.Map(item, existingEntity);
+
+            dataStorage.Update(existingEntity);
         }
     }
 }
