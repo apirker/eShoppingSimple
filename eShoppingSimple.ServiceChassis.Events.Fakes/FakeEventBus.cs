@@ -6,17 +6,14 @@ namespace eShoppingSimple.ServiceChassis.Events.Fakes
     {
         public void Publish<T>(T @event) where T : IEvent
         {
-            //would forward the event to some provider
         }
 
-        public void Subscribe<T>(IEventHandler<T> eventHandler) where T : IEvent
+        public void Subscribe<T>(IEventHandler eventHandler) where T : IEvent
         {
-            //would subscribe to a provider
         }
 
-        public void Unsubscribe<T>(IEventHandler<T> eventHandler) where T : IEvent
+        public void Unsubscribe<T>(IEventHandler eventHandler) where T : IEvent
         {
-            //would unsubscribe from a provider
         }
     }
 }

@@ -13,13 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.WebApi", "eShoppingSimple.ServiceChassis.WebApi\eShoppingSimple.ServiceChassis.WebApi.csproj", "{9302ABE8-A102-4830-932F-8C5524676B4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Storage.EfCore", "eShoppingSimple.ServiceChassis.Storage.EfCore\eShoppingSimple.ServiceChassis.Storage.EfCore.csproj", "{B2331C4D-2E7B-4459-B226-BB2C23477486}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Storage.EfCore", "eShoppingSimple.ServiceChassis.Storage.EfCore\eShoppingSimple.ServiceChassis.Storage.EfCore.csproj", "{B2331C4D-2E7B-4459-B226-BB2C23477486}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Events.Fakes", "eShoppingSimple.ServiceChassis.Events.Fakes\eShoppingSimple.ServiceChassis.Events.Fakes.csproj", "{3142148A-5B52-4D33-BF12-AF2D0509E44F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Events.Fakes", "eShoppingSimple.ServiceChassis.Events.Fakes\eShoppingSimple.ServiceChassis.Events.Fakes.csproj", "{3142148A-5B52-4D33-BF12-AF2D0509E44F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Events.Models", "eShoppingSimple.ServiceChassis.Events.Models\eShoppingSimple.ServiceChassis.Events.Models.csproj", "{D57463C6-E29C-4BD2-B410-1402A6CE0847}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Events.Models", "eShoppingSimple.ServiceChassis.Events.Models\eShoppingSimple.ServiceChassis.Events.Models.csproj", "{D57463C6-E29C-4BD2-B410-1402A6CE0847}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Events.Init", "eShoppingSimple.ServiceChassis.Events.Init\eShoppingSimple.ServiceChassis.Events.Init.csproj", "{E33723B7-36CA-45A5-AB4B-6FD22397E3BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Events.Init", "eShoppingSimple.ServiceChassis.Events.Init\eShoppingSimple.ServiceChassis.Events.Init.csproj", "{E33723B7-36CA-45A5-AB4B-6FD22397E3BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Events.RabbitMq", "eShoppingSimple.ServiceChassis.Events.RabbitMq\eShoppingSimple.ServiceChassis.Events.RabbitMq.csproj", "{5DD18526-D93A-4C45-89B5-399461D670D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{E33723B7-36CA-45A5-AB4B-6FD22397E3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E33723B7-36CA-45A5-AB4B-6FD22397E3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E33723B7-36CA-45A5-AB4B-6FD22397E3BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DD18526-D93A-4C45-89B5-399461D670D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD18526-D93A-4C45-89B5-399461D670D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD18526-D93A-4C45-89B5-399461D670D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD18526-D93A-4C45-89B5-399461D670D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

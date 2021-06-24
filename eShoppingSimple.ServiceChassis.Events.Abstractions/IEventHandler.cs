@@ -1,7 +1,7 @@
 ﻿namespace eShoppingSimple.ServiceChassis.Events.Abstractions
 {
-    public interface IEventHandler<T> where T:IEvent
+    public interface IEventHandler
     {
-        void Handle(T @event);
+        void Handle(object @event);
     }
 }
