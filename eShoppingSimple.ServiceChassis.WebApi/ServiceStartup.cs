@@ -1,4 +1,5 @@
-﻿using eShoppingSimple.ServiceChassis.Events.Init;
+﻿using eShoppingSimple.ServiceChassis.Events.Abstractions;
+using eShoppingSimple.ServiceChassis.Events.Init;
 using eShoppingSimple.ServiceChassis.Storage;
 using eShoppingSimple.ServiceChassis.Storage.EfCore;
 using Microsoft.AspNetCore.Builder;

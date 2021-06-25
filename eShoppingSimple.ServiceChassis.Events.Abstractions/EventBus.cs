@@ -6,17 +6,17 @@ using System.Threading;
 
 namespace eShoppingSimple.ServiceChassis.Events.Abstractions
 {
-    internal class EventBusManager : IEventBus
+    public class EventBus : IEventBus
     {
         private readonly IDictionary<Type, HashSet<IEventHandler>> handlersByEventType = new Dictionary<Type, HashSet<IEventHandler>>();
 
         private readonly IEventBusConnector connector;
         private readonly IEventCodeFactory eventCodeFactory;
-        private readonly EventBusManagerSettings options;
+        private readonly EventSettings options;
         private readonly object lockObject = new object();
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
-        public EventBusManager( IEventBusConnector connector, IEventCodeFactory eventCodeFactory, EventBusManagerSettings options)
+        public EventBus(IEventBusConnector connector, IEventCodeFactory eventCodeFactory, EventSettings options)
         {
             this.connector = connector;
             this.eventCodeFactory = eventCodeFactory;

@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\eShoppingSimple.ServiceChassis.Events.Abstractions\eShoppingSimple.ServiceChassis.Events.Abstractions.csproj" />
     <ProjectReference Include="..\eShoppingSimple.ServiceChassis.Events.Fakes\eShoppingSimple.ServiceChassis.Events.Fakes.csproj" />
+    <ProjectReference Include="..\eShoppingSimple.ServiceChassis.Events.RabbitMq\eShoppingSimple.ServiceChassis.Events.RabbitMq.csproj" />
   </ItemGroup>
 
 </Project>

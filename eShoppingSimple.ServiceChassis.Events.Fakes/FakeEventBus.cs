@@ -8,6 +8,14 @@ namespace eShoppingSimple.ServiceChassis.Events.Fakes
         {
         }
 
+        public void Start()
+        {
+        }
+
+        public void Stop()
+        {
+        }
+
         public void Subscribe<T>(IEventHandler eventHandler) where T : IEvent
         {
         }

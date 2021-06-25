@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Events.Init", "eShoppingSimple.ServiceChassis.Events.Init\eShoppingSimple.ServiceChassis.Events.Init.csproj", "{E33723B7-36CA-45A5-AB4B-6FD22397E3BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Events.RabbitMq", "eShoppingSimple.ServiceChassis.Events.RabbitMq\eShoppingSimple.ServiceChassis.Events.RabbitMq.csproj", "{5DD18526-D93A-4C45-89B5-399461D670D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.ServiceChassis.Events.RabbitMq", "eShoppingSimple.ServiceChassis.Events.RabbitMq\eShoppingSimple.ServiceChassis.Events.RabbitMq.csproj", "{5DD18526-D93A-4C45-89B5-399461D670D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.ServiceChassis.Events.Tests", "eShoppingSimple.ServiceChassis.Events.Tests\eShoppingSimple.ServiceChassis.Events.Tests.csproj", "{2A933BEF-C47E-49C8-8062-39798F653936}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{5DD18526-D93A-4C45-89B5-399461D670D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DD18526-D93A-4C45-89B5-399461D670D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DD18526-D93A-4C45-89B5-399461D670D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A933BEF-C47E-49C8-8062-39798F653936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A933BEF-C47E-49C8-8062-39798F653936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A933BEF-C47E-49C8-8062-39798F653936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A933BEF-C47E-49C8-8062-39798F653936}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
