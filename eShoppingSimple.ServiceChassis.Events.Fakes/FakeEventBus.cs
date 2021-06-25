@@ -8,6 +8,13 @@ namespace eShoppingSimple.ServiceChassis.Events.Fakes
         {
         }
 
+        public U PublishRequestAndWait<T, U>(T requestEvent)
+            where T : IEvent
+            where U : IEventResponse
+        {
+            return default(U);
+        }
+
         public void Start()
         {
         }
