@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="eShoppingSimple.ServiceChassis.Storage" Version="1.0.1" />
+    <PackageReference Include="eShoppingSimple.ServiceChassis.Storage" Version="1.0.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
   </ItemGroup>
 

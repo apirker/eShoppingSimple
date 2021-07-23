@@ -9,16 +9,15 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace eShoppingSimple.ServiceChassis.WebApi
 {
+    /// <summary>
+    /// Service startup class to configure the webapi
+    /// </summary>
     public class ServiceStartup
     {
         private readonly string serviceName;
@@ -39,6 +38,10 @@ namespace eShoppingSimple.ServiceChassis.WebApi
             this.configuration = configuration;
             this.webHostEnvironment = webHostEnvironment;
         }
+
+        /// <summary>
+        /// Sets up the dependency injection.
+        /// </summary>
         public void ConfigureServiceCollection(IServiceCollection services)
         {
             services.AddControllers(options =>
@@ -74,6 +77,9 @@ namespace eShoppingSimple.ServiceChassis.WebApi
                 storageStartup.Configure(services, storageSettings);
         }
 
+        /// <summary>
+        /// Configures the application.
+        /// </summary>
         public void ConfigureApplication(IApplicationBuilder app, IServiceProvider serviceProvider)
         {
             if (isDevelopment)
@@ -88,6 +94,8 @@ namespace eShoppingSimple.ServiceChassis.WebApi
                     c.DisplayRequestDuration();
                 });
             }
+
+            storageStartup.EnsureCreated(serviceProvider);
 
             app.UseRouting();
             app.UseEndpoints(endpoints => endpoints.MapControllers());

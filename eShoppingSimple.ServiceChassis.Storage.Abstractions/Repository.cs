@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
 {
+    /// <summary>
+    /// Repository implementation to access a database from the domains perspective.
+    /// </summary>
     public class Repository<TDomain, TStorage> : IRepository<TDomain> 
         where TDomain : class, IHasId
         where TStorage : class, IHasId

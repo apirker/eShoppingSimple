@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace eShoppingSimple.ServiceChassis.Domain
 {
+    /// <summary>
+    /// Base command implementation for domain commands.
+    /// </summary>
     public abstract class BaseCommand
     {
         private readonly IServiceProvider serviceProvider;
@@ -14,8 +17,14 @@ namespace eShoppingSimple.ServiceChassis.Domain
             this.serviceProvider = serviceProvider;
         }
 
+        /// <summary>
+        /// Method which really executes the command logic.
+        /// </summary>
         protected abstract EventBundle ExecuteInternal(IUnitOfWork unitOfWork);
         
+        /// <summary>
+        /// Execuction of a domain command.
+        /// </summary>
         public void Execute()
         {
             using(var unitOfWork = serviceProvider.GetService<IUnitOfWork>())

@@ -5,6 +5,9 @@ using System;
 
 namespace eShoppingSimple.ServiceChassis.Storage.EfCore
 {
+    /// <summary>
+    /// Entity framework specific unit of work implementation.
+    /// </summary>
     internal class UnitOfWorkEf : IUnitOfWork
     {
         private readonly IServiceScope serviceScope;
@@ -17,11 +20,13 @@ namespace eShoppingSimple.ServiceChassis.Storage.EfCore
             dbContext = serviceScope.ServiceProvider.GetRequiredService<DbContext>();
         }
 
+        /// <inheritdoc />
         public IRepository<TDomain> GetRepository<TDomain>() where TDomain : class, IHasId
         {
             return serviceScope.ServiceProvider.GetService<IRepository<TDomain>>();
         }
 
+        /// <inheritdoc />
         public void Commit()
         {
             dbContext.SaveChanges();

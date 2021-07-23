@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace eShoppingSimple.ServiceChassis.Events.Abstractions
 {
+    /// <summary>
+    /// Event bus class with which all the instances interact.
+    /// </summary>
     public class EventBus : IEventBus
     {
         private readonly IDictionary<Type, HashSet<IEventHandler>> handlersByEventType = new Dictionary<Type, HashSet<IEventHandler>>();
@@ -36,14 +39,20 @@ namespace eShoppingSimple.ServiceChassis.Events.Abstractions
             this.connector.MessageReceived += OnHandleMessage;
         }
 
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
         public void Publish<T>(T @event) where T:IEvent
         {
             var eventCode = eventCodeFactory.GetEventCode(@event.GetType());
             var serializedEvent = JsonConvert.SerializeObject(@event);
 
-            connector.Publish(eventCode, serializedEvent);
+            connector.PublishEvent(eventCode, serializedEvent);
         }
 
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
         public U PublishRequestAndWait<T, U>(T requestEvent)
             where T : IEvent
             where U : IEventResponse
@@ -77,6 +86,9 @@ namespace eShoppingSimple.ServiceChassis.Events.Abstractions
             }
         }
 
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
         public void Subscribe<T>(IEventHandler eventHandler) where T : IEvent
         {
             lock (lockObject)
@@ -90,16 +102,19 @@ namespace eShoppingSimple.ServiceChassis.Events.Abstractions
                     if (typeof(T).IsAssignableTo(typeof(IEventResponse)))
                     {
                         if (!string.IsNullOrEmpty(requestResponseQueueName))
-                            connector.Subscribe(eventCode, requestResponseQueueName);
+                            connector.SubscribeToEvent(eventCode, requestResponseQueueName);
                     }
                     else
                     {
-                        connector.Subscribe(eventCode, options.ServiceName);
+                        connector.SubscribeToEvent(eventCode, options.ServiceName);
                     }
                 }
             }
         }
 
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
         public void Unsubscribe<T>(IEventHandler eventHandler) where T : IEvent
         {
             lock (lockObject)
@@ -117,11 +132,11 @@ namespace eShoppingSimple.ServiceChassis.Events.Abstractions
                             if (typeof(T).IsAssignableTo(typeof(IEventResponse)))
                             {
                                 if (!string.IsNullOrEmpty(requestResponseQueueName))
-                                    connector.Unsubscribe(eventCode, requestResponseQueueName);
+                                    connector.UnsubscribeFromEvent(eventCode, requestResponseQueueName);
                             }
                             else
                             {
-                                connector.Unsubscribe(eventCode, options.ServiceName);
+                                connector.UnsubscribeFromEvent(eventCode, options.ServiceName);
                             }
                         }
                     }
@@ -129,11 +144,17 @@ namespace eShoppingSimple.ServiceChassis.Events.Abstractions
             }
         }
 
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
         public void Start()
         {
             connector.Start();
         }
 
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
         public void Stop()
         {
             connector.Stop();
@@ -173,15 +194,14 @@ namespace eShoppingSimple.ServiceChassis.Events.Abstractions
                     }
                 }
 
-                //If any exceptions throw it here to be handled in catch
-                if (exceptions.Count > 0) throw new AggregateException(exceptions);
+                if (exceptions.Count > 0) 
+                    throw new AggregateException(exceptions);
 
-                //Successfully commit message
-                connector.CommitMessage(messageArgs.MessageIdentifier);
+                connector.CommitEvent(messageArgs.MessageIdentifier);
             }
             catch (Exception)
             {
-                connector.RetryMessage(messageArgs.MessageIdentifier);
+                connector.RetryEvent(messageArgs.MessageIdentifier);
             }
         }
 

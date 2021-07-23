@@ -8,8 +8,6 @@ namespace eShoppingSimple.Orders.Storage.EfCore
     {
         private const string OrderServiceDatabaseSchema = "order";
         private const string OrdersTableName = "Orders";
-        //private string PicturesTableName = "Pictures";
-        //private string ItemsTableName = "Items";
 
         public void OnCreatingModels(ModelBuilder builder)
         {

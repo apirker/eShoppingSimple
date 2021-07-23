@@ -2,6 +2,9 @@
 
 namespace eShoppingSimple.ServiceChassis.Events.Abstractions
 {
+    /// <summary>
+    /// Event args which get constructed when a new event has happened.
+    /// </summary>
     public class MessageArgs : EventArgs
     {
         

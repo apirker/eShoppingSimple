@@ -1,13 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eShoppingSimple.ServiceChassis.Storage.EfCore
 {
+    /// <summary>
+    /// Base context which needs to be implemented then in the project for specific databases.
+    /// </summary>
     public class BaseContext : DbContext
     {
         private readonly IEnumerable<IModelBuilderConfiguration> modelBuilderConfigurations;

@@ -7,6 +7,9 @@ using System.Collections.Generic;
 
 namespace eShoppingSimple.ServiceChassis.Storage
 {
+    /// <summary>
+    /// Startup class for initializing storages for entityframework.
+    /// </summary>
     public class StorageStartup<TDbContext, TModelBuilderConfiguration> : IStorageStartup
         where TDbContext : DbContext
         where TModelBuilderConfiguration : class, IModelBuilderConfiguration
@@ -17,6 +20,8 @@ namespace eShoppingSimple.ServiceChassis.Storage
         {
             this.mappings = mappings;
         }
+
+        /// <inheritdoc />
         public void Configure(IServiceCollection services, StorageSettings storageSettings)
         {
             services.AddEfCore(storageSettings);
@@ -41,6 +46,12 @@ namespace eShoppingSimple.ServiceChassis.Storage
 
             services.AddScoped<DbContext, TDbContext>();
             services.AddTransient<IModelBuilderConfiguration, TModelBuilderConfiguration>();
+        }
+
+        public void EnsureCreated(IServiceProvider serviceProvider)
+        {
+            using(var dbContext = serviceProvider.GetService<DbContext>())
+                    dbContext.Database.EnsureCreated();
         }
     }
 }

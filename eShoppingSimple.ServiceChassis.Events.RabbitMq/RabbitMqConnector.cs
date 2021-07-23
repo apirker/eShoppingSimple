@@ -8,6 +8,9 @@ using System.Text;
 
 namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
 {
+    /// <summary>
+    /// RabbitMQ specific implementation of an event bus connector.
+    /// </summary>
     internal class RabbitMqConnector : IEventBusConnector
     {
         private readonly Dictionary<string, string> queueNameConsumerTagPairs = new Dictionary<string, string>();
@@ -53,6 +56,7 @@ namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
             MessageReceived?.Invoke(this, new MessageArgs(eventArgs.RoutingKey, message, eventArgs.DeliveryTag));
         }
 
+        /// <inheritdoc />
         public void CreateQueue(string queueName, bool durable, bool exclusive, bool autoDelete)
         {
             lock (channel)
@@ -62,7 +66,8 @@ namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
             }
         }
 
-        public ulong Publish(string eventCode, string serializedArgs)
+        /// <inheritdoc />
+        public ulong PublishEvent(string eventCode, string serializedArgs)
         {
             lock (channel)
             {
@@ -76,7 +81,8 @@ namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
             }
         }
 
-        public void Subscribe(string eventCode, string queueName)
+        /// <inheritdoc />
+        public void SubscribeToEvent(string eventCode, string queueName)
         {
             lock (channel)
             {
@@ -84,7 +90,8 @@ namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
             }
         }
 
-        public void Unsubscribe(string eventCode, string queueName)
+        /// <inheritdoc />
+        public void UnsubscribeFromEvent(string eventCode, string queueName)
         {
             lock (channel)
             {
@@ -92,6 +99,7 @@ namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
             }
         }
 
+        /// <inheritdoc />
         public void Start()
         {
             lock (channel)
@@ -109,6 +117,7 @@ namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
             }
         }
 
+        /// <inheritdoc />
         public void Stop()
         {
             lock (channel)
@@ -120,7 +129,8 @@ namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
             }
         }
 
-        public void RetryMessage(ulong messageIdentifier)
+        /// <inheritdoc />
+        public void RetryEvent(ulong messageIdentifier)
         {
             lock (channel)
             {
@@ -128,7 +138,8 @@ namespace eShoppingSimple.ServiceChassis.Events.RabbitMq
             }
         }
 
-        public void CommitMessage(ulong messageIdentifier)
+        /// <inheritdoc />
+        public void CommitEvent(ulong messageIdentifier)
         {
             lock (channel)
             {
