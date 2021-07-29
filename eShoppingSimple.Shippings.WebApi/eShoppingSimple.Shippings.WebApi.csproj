@@ -4,6 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>ServiceDocumentation.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="eShoppingSimple.ServiceChassis.WebApi" Version="1.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
@@ -12,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\eShoppingSimple.Shippings.Domain\eShoppingSimple.Shippings.Domain.csproj" />
     <ProjectReference Include="..\eShoppingSimple.Shippings.ServiceAccess\eShoppingSimple.Shippings.ServiceAccess.csproj" />
+    <ProjectReference Include="..\eShoppingSimple.Shippings.Storage\eShoppingSimple.Shippings.Storage.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace eShoppingSimple.Orders.ServiceAccess
 {
     public interface IOrderServiceClient
     {
-        Guid AddOrder(Guid customerId, IEnumerable<ItemDto> itemDtos);
-        void UpdateOrder(Guid orderId, IEnumerable<ItemDto> itemDtos);
-        void DeleteOrder(Guid orderId);
+        Task<Guid> AddOrder(Guid customerId, IEnumerable<ItemDto> itemDtos);
+        Task UpdateOrder(Guid orderId, IEnumerable<ItemDto> itemDtos);
+        Task DeleteOrder(Guid orderId);
 
-        OrderDto GetOrder(Guid id);
+        Task<OrderDto> GetOrder(Guid id);
+        Task<IEnumerable<OrderDto>> GetOrders();
+
 
     }
 }

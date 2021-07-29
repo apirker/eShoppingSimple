@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using eShoppingSimple.Shippings.Domain.Contracts.Commands;
+using eShoppingSimple.Shippings.Domain.Contracts.Queries;
+using eShoppingSimple.Shippings.ServiceAccess;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace eShoppingSimple.Shippings.WebApi.Controllers
 {
@@ -10,43 +12,34 @@ namespace eShoppingSimple.Shippings.WebApi.Controllers
     [ApiController]
     public class ShippingsController : ControllerBase
     {
-        // GET: api/<ShippingsController>
+        private readonly IServiceProvider serviceProvider;
+
+        public ShippingsController(IServiceProvider serviceProvider)
+        {
+            this.serviceProvider = serviceProvider;
+        }
+        
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<PacketDto> Get()
         {
-            throw new NotImplementedException();
+            var getAllPacketsQuery = new GetAllPacketsQuery(serviceProvider);
+            var result = getAllPacketsQuery.Query();
+
+            return result.Select(r => new PacketDto(r.Id, r.DeliveryService, r.Destination, r.Items.Select(i => new ItemDto(i.Id, i.Weight, new OrderDto(i.Order.Id))))).ToList();
         }
 
-        // GET api/<ShippingsController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            throw new NotImplementedException();
-
-        }
-
-        // POST api/<ShippingsController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] PacketDto packetDto)
         {
-            throw new NotImplementedException();
-
+            var addPacketCommand = new AddPacketCommand(packetDto.Id, packetDto.Destination, packetDto.DeliveryService, packetDto.Items.Select(i => (i.Id, i.Weight, i.Order.Id)).ToList(), serviceProvider);
+            addPacketCommand.Execute();
         }
 
-        // PUT api/<ShippingsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-            throw new NotImplementedException();
-
-        }
-
-        // DELETE api/<ShippingsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
-            throw new NotImplementedException();
-
+            var deletePacketCommand = new DeletePacketCommand(id, serviceProvider);
+            deletePacketCommand.Execute();
         }
     }
 }

@@ -10,30 +10,40 @@ namespace eShoppingSimple.Orders.ServiceAccess
     class OrderServiceClient : IOrderServiceClient 
     {
         private readonly string baseUri;
+        private readonly HttpClient httpClient;
 
         public OrderServiceClient(string baseUri)
         {
             this.baseUri = baseUri;
+            this.httpClient = new HttpClient();
         }
 
-        public Guid AddOrder(Guid customerId, IEnumerable<ItemDto> itemDtos)
+        public async Task<Guid> AddOrder(Guid customerId, IEnumerable<ItemDto> itemDtos)
         {
-            throw new NotImplementedException();
+            var result = await httpClient.PostAsync($"{baseUri}/api/orders", CreateJsonPayload(new OrderDto(customerId, itemDtos)));
+            return await DeserializeResponse<Guid>(result);
         }
 
-        public void DeleteOrder(Guid orderId)
+        public async Task DeleteOrder(Guid orderId)
         {
-            throw new NotImplementedException();
+            await httpClient.DeleteAsync($"{baseUri}/api/orders/{orderId}");
         }
 
-        public OrderDto GetOrder(Guid id)
-        {
-            throw new NotImplementedException();
+        public async Task<OrderDto> GetOrder(Guid id)
+        {            
+            var result = await httpClient.GetAsync($"{baseUri}/api/orders/{id}");
+            return await DeserializeResponse<OrderDto>(result);
         }
 
-        public void UpdateOrder(Guid orderId, IEnumerable<ItemDto> itemDtos)
+        public async Task<IEnumerable<OrderDto>> GetOrders()
         {
-            throw new NotImplementedException();
+            var result = await httpClient.GetAsync($"{baseUri}/api/orders");
+            return await DeserializeResponse<IEnumerable<OrderDto>>(result);
+        }
+
+        public async Task UpdateOrder(Guid orderId, IEnumerable<ItemDto> itemDtos)
+        {
+            await httpClient.PutAsync($"{baseUri}/api/orders/{orderId}", CreateJsonPayload(new OrderDto(orderId, itemDtos)));
         }
 
         private StringContent CreateJsonPayload(object content)
