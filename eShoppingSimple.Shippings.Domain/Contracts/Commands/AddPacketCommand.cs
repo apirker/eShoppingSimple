@@ -3,12 +3,12 @@ using eShoppingSimple.ServiceChassis.Events.Abstractions;
 using eShoppingSimple.ServiceChassis.Storage.Abstractions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eShoppingSimple.Shippings.Domain.Contracts.Commands
 {
+    /// <summary>
+    /// Command to add a packet
+    /// </summary>
     public class AddPacketCommand : BaseCommand
     {
         private readonly Guid id;

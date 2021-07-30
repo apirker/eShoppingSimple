@@ -1,5 +1,4 @@
-﻿using eShoppingSimple.Orders.Domain.Implementations;
-using eShoppingSimple.ServiceChassis.Domain;
+﻿using eShoppingSimple.ServiceChassis.Domain;
 using eShoppingSimple.ServiceChassis.Events.Abstractions;
 using eShoppingSimple.ServiceChassis.Storage.Abstractions;
 using System;
@@ -7,6 +6,9 @@ using System.Linq;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
+    /// <summary>
+    /// Command to create a delete an order
+    /// </summary>
     public class DeleteOrderCommand : BaseCommand
     {
         private readonly Guid orderId;

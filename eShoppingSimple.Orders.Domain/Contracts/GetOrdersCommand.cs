@@ -1,5 +1,4 @@
-﻿using eShoppingSimple.Orders.Domain.Implementations;
-using eShoppingSimple.ServiceChassis.Domain;
+﻿using eShoppingSimple.ServiceChassis.Domain;
 using eShoppingSimple.ServiceChassis.Storage.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,9 @@ using System.Linq;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
+    /// <summary>
+    /// Query which returns all orders
+    /// </summary>
     public class GetOrdersCommand : BaseQuery<IOrder>
     {
         public GetOrdersCommand(IServiceProvider serviceProvider) : base(serviceProvider)

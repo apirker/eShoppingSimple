@@ -7,6 +7,9 @@ using System.Collections.Generic;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
+    /// <summary>
+    /// Command to create a new order
+    /// </summary>
     public class AddOrderCommand : BaseCommand
     {
         private readonly Guid customerId;

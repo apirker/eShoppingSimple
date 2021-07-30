@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace eShoppingSimple.Shippings.Domain.Contracts.Commands
 {
+    /// <summary>
+    /// Command to delete a packet
+    /// </summary>
     public class DeletePacketCommand : BaseCommand
     {
         private readonly Guid id;

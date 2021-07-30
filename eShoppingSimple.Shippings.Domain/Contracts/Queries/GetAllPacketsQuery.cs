@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace eShoppingSimple.Shippings.Domain.Contracts.Queries
 {
+    /// <summary>
+    /// Query to return all packets.
+    /// </summary>
     public class GetAllPacketsQuery : BaseQuery<IPacket>
     {
         public GetAllPacketsQuery(IServiceProvider serviceProvider) : base(serviceProvider)
