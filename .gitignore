@@ -149,7 +149,7 @@ publish/
 PublishScripts/
 
 # NuGet Packages
-*.nupkg
+#*.nupkg
 **/packages/*
 *.nuget.props
 *.nuget.targets
