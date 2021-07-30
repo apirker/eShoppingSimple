@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.Orders.Stor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShoppingSimple.Shippings.Storage", "eShoppingSimple.Shippings.Storage\eShoppingSimple.Shippings.Storage.csproj", "{9525E0C8-5485-408B-897A-2C789BB81BC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.Orders.DevTools", "eShoppingSimple.Orders.DevTools\eShoppingSimple.Orders.DevTools.csproj", "{D7359B4A-994D-4701-B0AD-3D6C4725FAC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShoppingSimple.Shippings.DevTools", "eShoppingSimple.Shippings.DevTools\eShoppingSimple.Shippings.DevTools.csproj", "{57CBC22E-A9A4-4B4F-BD80-A4F3ABE5DF8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{9525E0C8-5485-408B-897A-2C789BB81BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9525E0C8-5485-408B-897A-2C789BB81BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9525E0C8-5485-408B-897A-2C789BB81BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7359B4A-994D-4701-B0AD-3D6C4725FAC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7359B4A-994D-4701-B0AD-3D6C4725FAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7359B4A-994D-4701-B0AD-3D6C4725FAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7359B4A-994D-4701-B0AD-3D6C4725FAC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CBC22E-A9A4-4B4F-BD80-A4F3ABE5DF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CBC22E-A9A4-4B4F-BD80-A4F3ABE5DF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CBC22E-A9A4-4B4F-BD80-A4F3ABE5DF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CBC22E-A9A4-4B4F-BD80-A4F3ABE5DF8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
