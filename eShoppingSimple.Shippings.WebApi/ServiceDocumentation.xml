@@ -4,23 +4,38 @@
         <name>eShoppingSimple.Shippings.WebApi</name>
     </assembly>
     <members>
+        <member name="T:eShoppingSimple.Shippings.WebApi.Controllers.ShippingsController">
+            <summary>
+            API controller for shippings.
+            </summary>
+        </member>
+        <member name="M:eShoppingSimple.Shippings.WebApi.Controllers.ShippingsController.Get">
+            <summary>
+            Returns all packets
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eShoppingSimple.Shippings.WebApi.Controllers.ShippingsController.Post(eShoppingSimple.Shippings.ServiceAccess.PacketDto)">
+            <summary>
+            Creates a new packet
+            </summary>
+            <param name="packetDto"></param>
+        </member>
+        <member name="M:eShoppingSimple.Shippings.WebApi.Controllers.ShippingsController.Delete(System.Guid)">
+            <summary>
+            Deletes an existing packet
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:eShoppingSimple.Shippings.WebApi.Startup">
+            <summary>
+            Startup class for the shipping service.
+            </summary>
+        </member>
         <member name="P:eShoppingSimple.Shippings.WebApi.Startup.Configuration">
             <summary>
             
             </summary>
-        </member>
-        <member name="M:eShoppingSimple.Shippings.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
-            
-            </summary>
-            <param name="services"></param>
-        </member>
-        <member name="M:eShoppingSimple.Shippings.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.IServiceProvider)">
-            <summary>
-            
-            </summary>
-            <param name="app"></param>
-            <param name="serviceProvider"></param>
         </member>
     </members>
 </doc>

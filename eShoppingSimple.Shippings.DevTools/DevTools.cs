@@ -9,13 +9,13 @@ namespace eShoppingSimple.Shippings.DevTools
     public class DevTools
     {
         [TestMethod]
-        public async void Test()
+        public void Test()
         {
             var shippingsClient = Shippings.ServiceAccess.ShippingServiceClientFactory.Create("http://localhost:22345");
             var orderId = Guid.NewGuid();
-            await shippingsClient.AddPacket(new ServiceAccess.PacketDto(orderId, "DHL", "US", new List<ItemDto>() { new ItemDto(Guid.NewGuid(), 55, new OrderDto(Guid.NewGuid())) }));
-            var results = await shippingsClient.GetPackets();
-            await shippingsClient.DeletePacket(orderId);
+            shippingsClient.AddPacket(new ServiceAccess.PacketDto(orderId, "DHL", "US", new List<ItemDto>() { new ItemDto(Guid.NewGuid(), 55, new OrderDto(Guid.NewGuid())) })).GetAwaiter().GetResult();
+            var results = shippingsClient.GetPackets().GetAwaiter().GetResult();
+            shippingsClient.DeletePacket(orderId).GetAwaiter().GetResult();
         }
     }
 }

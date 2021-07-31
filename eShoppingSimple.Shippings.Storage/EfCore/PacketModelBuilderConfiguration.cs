@@ -1,14 +1,12 @@
 ﻿using eShoppingSimple.ServiceChassis.Storage.EfCore;
 using eShoppingSimple.Shippings.Storage.Model;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eShoppingSimple.Shippings.Storage.EfCore
 {
+    /// <summary>
+    /// Class which sets up the data model for entity framework
+    /// </summary>
     class PacketModelBuilderConfiguration : IModelBuilderConfiguration
     {
         private const string PacketsServiceDatabaseSchema = "packet";

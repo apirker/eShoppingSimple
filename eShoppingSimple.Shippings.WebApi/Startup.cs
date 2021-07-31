@@ -8,6 +8,9 @@ using System;
 
 namespace eShoppingSimple.Shippings.WebApi
 {
+    /// <summary>
+    /// Startup class for the shipping service.
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
@@ -23,21 +26,12 @@ namespace eShoppingSimple.Shippings.WebApi
 
         private ServiceStartup serviceStartup;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddStorageMapper();
             serviceStartup.ConfigureServiceCollection(services);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="app"></param>
-        /// <param name="serviceProvider"></param>
         public void Configure(IApplicationBuilder app, IServiceProvider serviceProvider)
         {
             serviceStartup.ConfigureApplication(app, serviceProvider);

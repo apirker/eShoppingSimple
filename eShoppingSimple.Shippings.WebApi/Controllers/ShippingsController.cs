@@ -8,6 +8,9 @@ using System.Linq;
 
 namespace eShoppingSimple.Shippings.WebApi.Controllers
 {
+    /// <summary>
+    /// API controller for shippings.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ShippingsController : ControllerBase
@@ -19,6 +22,10 @@ namespace eShoppingSimple.Shippings.WebApi.Controllers
             this.serviceProvider = serviceProvider;
         }
         
+        /// <summary>
+        /// Returns all packets
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<PacketDto> Get()
         {
@@ -28,6 +35,10 @@ namespace eShoppingSimple.Shippings.WebApi.Controllers
             return result.Select(r => new PacketDto(r.Id, r.DeliveryService, r.Destination, r.Items.Select(i => new ItemDto(i.Id, i.Weight, new OrderDto(i.Order.Id))))).ToList();
         }
 
+        /// <summary>
+        /// Creates a new packet
+        /// </summary>
+        /// <param name="packetDto"></param>
         [HttpPost]
         public void Post([FromBody] PacketDto packetDto)
         {
@@ -35,6 +46,10 @@ namespace eShoppingSimple.Shippings.WebApi.Controllers
             addPacketCommand.Execute();
         }
 
+        /// <summary>
+        /// Deletes an existing packet
+        /// </summary>
+        /// <param name="id"></param>
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {

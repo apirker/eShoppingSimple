@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace eShoppingSimple.Shippings.Storage.Mapper
 {
+    /// <summary>
+    /// Mapper to map between domain and data model for packets
+    /// </summary>
     class PacketMapper : IMapper<IPacket, Packet>
     {
         public Packet Map(IPacket domain)
