@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace eShoppingSimple.Orders.Storage.Mapper
 {
+    /// <summary>
+    /// Mapper between order domain and order storage model.
+    /// </summary>
     class OrderMapper : IMapper<IOrder, Order>
     {
         public Order Map(IOrder domain)

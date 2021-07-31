@@ -6,7 +6,7 @@
     <members>
         <member name="T:eShoppingSimple.Orders.WebApi.Controllers.OrdersController">
             <summary>
-            
+            API controller for orders
             </summary>
         </member>
         <member name="M:eShoppingSimple.Orders.WebApi.Controllers.OrdersController.#ctor(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)">
@@ -17,28 +17,23 @@
         </member>
         <member name="M:eShoppingSimple.Orders.WebApi.Controllers.OrdersController.Get">
             <summary>
-            
+            Returns all orders.
             </summary>
-            <returns></returns>
         </member>
         <member name="M:eShoppingSimple.Orders.WebApi.Controllers.OrdersController.Post(eShoppingSimple.Orders.ServiceAccess.OrderDto)">
             <summary>
-            
+            Adds a new order to the service.
             </summary>
-            <param name="orderDto"></param>
         </member>
         <member name="M:eShoppingSimple.Orders.WebApi.Controllers.OrdersController.Put(System.Guid,eShoppingSimple.Orders.ServiceAccess.OrderDto)">
             <summary>
-            
+            Updates an existing order.
             </summary>
-            <param name="id"></param>
-            <param name="orderDto"></param>
         </member>
         <member name="M:eShoppingSimple.Orders.WebApi.Controllers.OrdersController.Delete(System.Guid)">
             <summary>
-            
+            Deletes an existing order from the service.
             </summary>
-            <param name="id"></param>
         </member>
         <member name="T:eShoppingSimple.Orders.WebApi.Program">
             <summary>
@@ -60,33 +55,8 @@
         </member>
         <member name="T:eShoppingSimple.Orders.WebApi.Startup">
             <summary>
-            
+            Startup class for the web api.
             </summary>
-        </member>
-        <member name="M:eShoppingSimple.Orders.WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
-            <summary>
-            
-            </summary>
-            <param name="configuration"></param>
-            <param name="webHostEnvironment"></param>
-        </member>
-        <member name="P:eShoppingSimple.Orders.WebApi.Startup.Configuration">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:eShoppingSimple.Orders.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
-            
-            </summary>
-            <param name="services"></param>
-        </member>
-        <member name="M:eShoppingSimple.Orders.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.IServiceProvider)">
-            <summary>
-            
-            </summary>
-            <param name="app"></param>
-            <param name="serviceProvider"></param>
         </member>
     </members>
 </doc>

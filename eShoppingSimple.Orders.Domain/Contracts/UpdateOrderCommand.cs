@@ -8,6 +8,9 @@ using System.Linq;
 
 namespace eShoppingSimple.Orders.Domain.Contracts
 {
+    /// <summary>
+    /// Command to update an order
+    /// </summary>
     public class UpdateOrderCommand : BaseCommand
     {
         private readonly Guid orderId;

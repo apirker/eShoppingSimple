@@ -18,10 +18,9 @@ namespace eShoppingSimple.Orders.ServiceAccess
             this.httpClient = new HttpClient();
         }
 
-        public async Task<Guid> AddOrder(Guid customerId, IEnumerable<ItemDto> itemDtos)
+        public async Task AddOrder(Guid customerId, IEnumerable<ItemDto> itemDtos)
         {
             var result = await httpClient.PostAsync($"{baseUri}/api/orders", CreateJsonPayload(new OrderDto(customerId, itemDtos)));
-            return await DeserializeResponse<Guid>(result);
         }
 
         public async Task DeleteOrder(Guid orderId)
@@ -29,16 +28,10 @@ namespace eShoppingSimple.Orders.ServiceAccess
             await httpClient.DeleteAsync($"{baseUri}/api/orders/{orderId}");
         }
 
-        public async Task<OrderDto> GetOrder(Guid id)
-        {            
-            var result = await httpClient.GetAsync($"{baseUri}/api/orders/{id}");
-            return await DeserializeResponse<OrderDto>(result);
-        }
-
-        public async Task<IEnumerable<OrderDto>> GetOrders()
+        public async Task<IEnumerable<ResultOrderDto>> GetOrders()
         {
             var result = await httpClient.GetAsync($"{baseUri}/api/orders");
-            return await DeserializeResponse<IEnumerable<OrderDto>>(result);
+            return await DeserializeResponse<IEnumerable<ResultOrderDto>>(result);
         }
 
         public async Task UpdateOrder(Guid orderId, IEnumerable<ItemDto> itemDtos)

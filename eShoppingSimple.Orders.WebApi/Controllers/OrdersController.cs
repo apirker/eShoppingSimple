@@ -9,7 +9,7 @@ using System.Linq;
 namespace eShoppingSimple.Orders.WebApi.Controllers
 {
     /// <summary>
-    /// 
+    /// API controller for orders
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -27,9 +27,8 @@ namespace eShoppingSimple.Orders.WebApi.Controllers
         }
         
         /// <summary>
-        /// 
+        /// Returns all orders.
         /// </summary>
-        /// <returns></returns>
         [HttpGet]
         public IEnumerable<ResultOrderDto> Get()
         {
@@ -46,9 +45,8 @@ namespace eShoppingSimple.Orders.WebApi.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Adds a new order to the service.
         /// </summary>
-        /// <param name="orderDto"></param>
         [HttpPost]
         public void Post([FromBody] OrderDto orderDto)
         {
@@ -57,10 +55,8 @@ namespace eShoppingSimple.Orders.WebApi.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Updates an existing order.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="orderDto"></param>
         [HttpPut("{id}")]
         public void Put(Guid id, [FromBody] OrderDto orderDto)
         {
@@ -69,9 +65,8 @@ namespace eShoppingSimple.Orders.WebApi.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Deletes an existing order from the service.
         /// </summary>
-        /// <param name="id"></param>
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {

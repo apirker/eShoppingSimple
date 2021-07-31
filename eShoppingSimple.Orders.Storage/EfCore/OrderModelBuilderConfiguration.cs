@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eShoppingSimple.Orders.Storage.EfCore
 {
+    /// <summary>
+    /// Model builder implementation to configure the database model for EF.
+    /// </summary>
     class OrderModelBuilderConfiguration : IModelBuilderConfiguration
     {
         private const string OrderServiceDatabaseSchema = "order";

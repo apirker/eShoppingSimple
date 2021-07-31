@@ -12,7 +12,7 @@ namespace eShoppingSimple.Orders.ServiceAccess
         /// <summary>
         /// Adding an order
         /// </summary>
-        Task<Guid> AddOrder(Guid customerId, IEnumerable<ItemDto> itemDtos);
+        Task AddOrder(Guid customerId, IEnumerable<ItemDto> itemDtos);
 
         /// <summary>
         /// Updating an order
@@ -25,15 +25,8 @@ namespace eShoppingSimple.Orders.ServiceAccess
         Task DeleteOrder(Guid orderId);
 
         /// <summary>
-        /// Get an order by its id
-        /// </summary>
-        Task<OrderDto> GetOrder(Guid id);
-
-        /// <summary>
         /// Get all orders
         /// </summary>
-        Task<IEnumerable<OrderDto>> GetOrders();
-
-
+        Task<IEnumerable<ResultOrderDto>> GetOrders();
     }
 }
