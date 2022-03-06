@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
 {
@@ -28,6 +29,12 @@ namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
         /// Returns all items of the storage.
         /// </summary>
         IEnumerable<TStorage> GetAll();
+
+        /// <summary>
+        /// Returns the storage as queryable.
+        /// </summary>
+        /// <returns></returns>
+        IQueryable<TStorage> AsQueryable();
 
         /// <summary>
         /// Find one data item by its id.

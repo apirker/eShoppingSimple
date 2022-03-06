@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
@@ -10,8 +11,8 @@ namespace eShoppingSimple.ServiceChassis.Storage.Abstractions
         where TDomain : class, IHasId
         where TStorage : class, IHasId
     {
-        private readonly IMapper<TDomain, TStorage> mapper;
-        private readonly IDataStorage<TStorage> dataStorage;
+        protected readonly IMapper<TDomain, TStorage> mapper;
+        protected readonly IDataStorage<TStorage> dataStorage;
 
         public Repository(IMapper<TDomain, TStorage> mapper, IDataStorage<TStorage> dataStorage)
         {

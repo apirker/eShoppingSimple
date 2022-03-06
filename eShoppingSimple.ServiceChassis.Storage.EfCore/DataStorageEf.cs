@@ -26,6 +26,12 @@ namespace eShoppingSimple.ServiceChassis.Storage.EfCore
         }
 
         /// <inheritdoc />
+        public IQueryable<TStorage> AsQueryable()
+        {
+            return dbContext.Set<TStorage>().AsQueryable();
+        }
+
+        /// <inheritdoc />
         public void Delete(TStorage storageItem)
         {
             dbContext.Set<TStorage>().Remove(storageItem);
